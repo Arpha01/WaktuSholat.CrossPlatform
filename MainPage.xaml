@@ -10,15 +10,7 @@
             Spacing="25"
             Padding="0,0"
             VerticalOptions="Start">
-            <material:Label 
-            FontSize="18"
-            Margin="0,10,0,0"
-            Text="WaktuShalat"
-            HorizontalOptions="Start"
-            HorizontalTextAlignment="Start"
-            FontWeight="800"/>
             <Border
-                Margin="0,0,0,10"
                 StrokeThickness="0"
                 Padding="15"
                 Grid.Row="0">
@@ -35,6 +27,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackLayout VerticalOptions="Center" Margin="0">
+                        <material:Chip Text="7 Rajab 1444 H" IconColor="White" BackgroundColour="#03DAC6" ForegroundColor="White" Icon="Calendar" Style="{DynamicResource AssistElevatedChipStyle}" />
                         <material:Label Text="Shalat Selanjutnya" HorizontalTextAlignment="Center" ForegroundColor="White" />
                         <Label Text="Dzuhur" Grid.Column="0" FontFamily="Segoe UI" FontAttributes="None" FontSize="20" x:Name="lblNamaShalat" HorizontalTextAlignment="Center" TextColor="White"/>
                         <Label Text="15:20" Grid.Column="0" FontAttributes="Bold" FontFamily="Segoe UI" FontSize="35" x:Name="lblWaktuShalat" HorizontalTextAlignment="Center" TextColor="White" />
