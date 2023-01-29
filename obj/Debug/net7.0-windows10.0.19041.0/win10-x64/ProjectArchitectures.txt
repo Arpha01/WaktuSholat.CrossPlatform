@@ -1,0 +1,2 @@
+C:\Users\mucha\OneDrive\Dokumen\Projects\WaktuSholat\WaktuSholat\WaktuSholat.csproj;x64
+C:\Users\mucha\OneDrive\Dokumen\Sample\Material.Components.Maui-master\Material.Components.Maui\Material.Components.Maui.csproj;neutral

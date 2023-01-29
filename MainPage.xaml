@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:WaktuSholat.Utils.Helpers"
+             xmlns:material="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
+             x:Class="WaktuSholat.MainPage" Loaded="ContentPage_Loaded"
+             IconImageSource="mosque.png">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="0,0"
+            VerticalOptions="Start">
+            <material:Label 
+            FontSize="18"
+            Margin="0,10,0,0"
+            Text="WaktuShalat"
+            HorizontalOptions="Start"
+            HorizontalTextAlignment="Start"
+            FontWeight="800"/>
+            <Border
+                Margin="0,0,0,10"
+                StrokeThickness="0"
+                Padding="15"
+                Grid.Row="0">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#F27121" Offset="1.0" />
+                        <GradientStop Color="#E94057" Offset="0.50" />
+                        <GradientStop Color="#8A2387" Offset="0.1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout VerticalOptions="Center" Margin="0">
+                        <material:Label Text="Shalat Selanjutnya" HorizontalTextAlignment="Center" ForegroundColor="White" />
+                        <Label Text="Dzuhur" Grid.Column="0" FontFamily="Segoe UI" FontAttributes="None" FontSize="20" x:Name="lblNamaShalat" HorizontalTextAlignment="Center" TextColor="White"/>
+                        <Label Text="15:20" Grid.Column="0" FontAttributes="Bold" FontFamily="Segoe UI" FontSize="35" x:Name="lblWaktuShalat" HorizontalTextAlignment="Center" TextColor="White" />
+                        <Label Text="(03:01:59)" Grid.Column="0" HorizontalTextAlignment="Center" TextColor="White" />
+                    </StackLayout>
+                    <Image Source="mosquetwo.png" HeightRequest="180" HorizontalOptions="End" VerticalOptions="Fill" Grid.Column="1" />
+                </Grid>
+            </Border>
+            <Grid Padding="30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <material:Card Grid.Row="1">
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <material:Label Text="Tangerang Selatan" FontWeight="600" FontSize="16" HorizontalOptions="Start" Margin="10,10,0,0" />
+                        <material:Label Text="Jl. Tentara Pelajar No.1, Kejaksan, Kec. Kejaksan, Kota Cirebon, Jawa Barat 45123" FontWeight="200" HorizontalOptions="Start" FontSize="12" Margin="10,55,0,0" />
+                        <material:Button Text="Ganti lokasi" FontSize="11.5" Grid.Column="1" VerticalOptions="Center" Margin="0,30,0,0" />
+                    </Grid>
+                </material:Card>
+                <material:Card Grid.Row="2" Margin="0,10">
+                    <Grid Margin="10" Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="200" />
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0">
+                            <material:Label HorizontalOptions="Start" Text="Ayat Quran" ForegroundColor="#9CA3AD" />
+                            <material:Label Text="Al Baqarah" HorizontalOptions="Start" FontWeight="700" FontSize="25" />
+                            <material:Label Text="(Sapi Betina) Ayat 255" HorizontalOptions="Start" />
+                        </StackLayout>
+                        <StackLayout Grid.Row="1">
+                            <material:Label HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1">
+                                Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa'at di sisi Allah tanpa izin-Nya? Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar
+                            </material:Label>
+                            <material:Button Icon="Refresh" Text="Refresh" HorizontalOptions="End" />
+                        </StackLayout>
+                    </Grid>
+                </material:Card>
+                <material:Card Grid.Row="3">
+                    <Grid Margin="10" Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0">
+                            <material:Label Text="Shalat hari ini" HorizontalOptions="Start" ForegroundColor="#9CA3AD" />
+                            <material:Label Text="Jadwal Shalat" HorizontalOptions="Start" Margin="0,0,10,0" FontWeight="700" FontSize="25" />
+                        </StackLayout>
+                        <TableView Intent="Data" Grid.Row="1">
+                            <TableRoot>
+                                <TableSection>
+                                    <ViewCell>
+                                        <Grid RowDefinitions="Auto, Auto"
+                                      ColumnDefinitions="0.5*, 0.5*">
+                                            <Label Text="Subuh" Padding="10" />
+                                            <Label Text="05:00" Grid.Column="1" Padding="10" />
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <Grid RowDefinitions="Auto, Auto"
+                                      ColumnDefinitions="0.5*, 0.5*">
+                                            <Label Text="Subuh" Padding="10" />
+                                            <Label Text="05:00" Grid.Column="1" Padding="10" />
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <Grid RowDefinitions="Auto, Auto"
+                                      ColumnDefinitions="0.5*, 0.5*">
+                                            <Label Text="Subuh" Padding="10" />
+                                            <Label Text="05:00" Grid.Column="1" Padding="10" />
+                                        </Grid>
+                                    </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+                        </TableView>
+                    </Grid>
+                </material:Card>
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
